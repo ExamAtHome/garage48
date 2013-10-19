@@ -36,8 +36,9 @@
       </div>
       <div data-bind="foreach: currentCards">
         <div>
-          <span data-bind="text: rus"></span> -
-          <span data-bind="text: eng"></span>
+            <span data-bind="text: rus"></span>
+          - <span data-bind="text: eng"></span>
+          : <span data-bind="text: (box()/$root.cardsWeight() * 100).toFixed(2)"></span>
         </div>
       </div>
     </div>
@@ -48,6 +49,7 @@
       </div>
       <input data-bind="value: answer">
       <a data-bind="click: onCheckAnswer" class=".btn" href="#">check</a>
+      <a data-bind="click: onNextCard" class=".btn" href="#">next</a>
     </div>
   </body>
 

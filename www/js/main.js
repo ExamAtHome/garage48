@@ -107,7 +107,31 @@
   vm.onCheckAnswer = function(obj)
   {
     var answer = vm.answer().replace(/\s/, '')
-    vm.activeCardStatus(answer == vm.activeCard().rus() ? 'green' : 'red')
+    var correct = (answer == vm.activeCard().rus())
+    vm.activeCardStatus(correct ? 'green' : 'red')
+    vm.activeCard().box(correct ? Math.max(vm.activeCard().box() - 1, 1) : 5)
+  }
+
+  vm.cardsWeight = ko.computed(function()
+  {
+    var total = 0;
+    ko.utils.arrayForEach(vm.cards(), function(card) {
+      total += card.box()
+    });
+    return total;
+  }).extend({throttle: 1});
+
+  vm.onNextCard = function(obj)
+  {
+    var total = 0
+      , random = Math.random() * (vm.cardsWeight() - 1)
+      , card = ko.utils.arrayFirst(vm.cards(), function(card)
+      {
+        total += card.box()
+        return total >= random
+      });
+
+    vm.activeCard(card)
   }
 
 
