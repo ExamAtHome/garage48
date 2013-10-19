@@ -35,14 +35,33 @@ init = function(data)
   vm.activeCard = ko.observable(vm.cards()[0])
   vm.activeCardStatus = ko.observable('')
   vm.answer = ko.observable('')
+
   vm.onCheckAnswer = function(obj)
   {
+    console.log(arguments)
+    var element = $('.learning .card')
     var answer = vm.answer().replace(/\s/, '')
     var correct = (answer == vm.activeCard().rus())
-    vm.activeCardStatus(correct ? 'green' : 'red')
-    vm.activeCard().box(correct ? Math.max(vm.activeCard().box() - 1, 1) : 5)
-    saveData()
+
+    element.addClass('flipper').addClass('flip')
+    setTimeout(function()
+    {
+      vm.activeCardStatus(correct ? 'green' : 'red')
+      element.html(vm.activeCard().rus())
+      element.removeClass('flip')
+      vm.activeCard().box(correct ? Math.max(vm.activeCard().box() - 1, 1) : 5)
+      saveData()
+    }, 500)
+
   }
+
+/*
+flip = function(element, obj){
+     element.addClass('flipper').addClass('flip');
+     setTimeout(function(){element.html(data);
+                              element.removeClass('flip');},500);
+};
+*/
 
   vm.cardsWeight = ko.computed(function()
   {
