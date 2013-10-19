@@ -17,26 +17,27 @@ writedata = function(id, data){
 google.load("visualization", "1", {packages:["corechart"]});
 
 drawChart = function(element, data) {
-   if(!element) element = $('#chart')
-   draw = function(data){
-     var arrayData = [['Attempt', 'Percent']];
-     for(var i=0;i<data.length;i++){
-        arrayData.push([i, Math.round(data[i])]);
-     }
-      var options = {
-        title: 'Studying progress',
-        chartArea: {
-           width: 400,
-           height: 200,
-           }
-      };
-      var chartData = google.visualization.arrayToDataTable(arrayData);
-      var chart = new google.visualization.LineChart(element[0]);
-      chart.draw(chartData, options);
-   }
-   if(data) draw(data);
-   else readdata('chart', draw)
-
+   var element = $('#chart');
+   if(element.length > 0  && element.css("display") != 'none'){
+    draw = function(data){
+      var arrayData = [['Attempt', 'Percent']];
+      for(var i=0;i<data.length;i++){
+          arrayData.push([i, Math.round(data[i])]);
+      }
+        var options = {
+          title: 'Studying progress',
+          chartArea: {
+            width: 400,
+            height: 200,
+            }
+        };
+        var chartData = google.visualization.arrayToDataTable(arrayData);
+        var chart = new google.visualization.LineChart(element[0]);
+        chart.draw(chartData, options);
+    }
+    if(data) draw(data);
+    else readdata('chart', draw)
+  }
 }
 
 
@@ -47,9 +48,7 @@ adjustProgress = function(newWeight, cardCount){
     }else{
       data = [125 - 25*newWeight/cardCount];
     }
-    if($('#chart').length > 0  && $('#chart').css("display") != 'none'){
-      drawChart($('#chart'), data);
-    }
+    drawChart($('#chart'), data);
     writedata('chart',data);
   });
 }

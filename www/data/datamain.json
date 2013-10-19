@@ -1,30 +1,33 @@
 {
    "courses": [
       {
-         "id": "course_1",
-         "name": "Course. Home"
-      },
-      {
          "id": "course_2",
-         "name": "Course. Friends"
+         "name": "Course. Friends",
+         "desc": ""
       },
       {
          "id": "course_3",
-         "name": "Course. Travel"
+         "name": "Course. Travel",
+         "desc": ""
+      },
+      {
+         "id": "course_1",
+         "name": "Course. Home",
+         "desc": ""
       }
    ],
    "lessons": [
       {
          "id": "lesson_1",
-         "name": "Lesson1. Pets #1"
+         "name": "Lesson1. Pets"
       },
       {
          "id": "lesson_2",
-         "name": "Lesson2. NoPets #2"
+         "name": "Lesson2. Furniture"
       },
       {
          "id": "lesson_3",
-         "name": "Lesson3. NoPets #3"
+         "name": "Lesson3. Kitchen"
       }
    ],
    "cards": [
@@ -88,6 +91,22 @@
          "lesson": "lesson_1",
          "answer": "",
          "status": "red"
+      }
+   ],
+   "children":[
+      {
+        "name": "Bob",
+        "courses": [
+           {
+              "id": "course_1",
+              "name": "Course. Home"
+           }
+        ]
+      },
+      {
+        "name": "Alice",
+        "courses": [
+        ]
       }
    ]
 }
