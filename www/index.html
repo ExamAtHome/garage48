@@ -8,6 +8,7 @@
     <script src="js/knockout.mapping.js"></script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/ui.js"></script>
 
     <style>
       .card
@@ -15,6 +16,12 @@
         padding: 20px;
         background-color: #aaf;
         border: 1px solid gray;
+        width:300px;
+        height:160px;
+        display: table-cell;
+        vertical-align:middle;
+        font-size:60;
+        text-align:center;
       }
 
       .card.red
@@ -26,6 +33,17 @@
       {
         background-color: #afa;
       }
+
+      .flipper{
+          -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s ease-in;
+          transition:width 0.5s, height 0.5s, transform 0.5s ease-in;
+      }
+
+      .flip{
+          -webkit-transform:rotateY(90deg);
+          transform:rotateY(90deg);
+      }
+
     </style>
   </head>
 
