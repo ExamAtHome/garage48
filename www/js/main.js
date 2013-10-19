@@ -54,16 +54,7 @@ init = function(data)
       vm.activeCard().box(newBox)
       saveData()
     }, 500)
-
   }
-
-/*
-flip = function(element, obj){
-     element.addClass('flipper').addClass('flip');
-     setTimeout(function(){element.html(data);
-                              element.removeClass('flip');},500);
-};
-*/
 
   vm.cardsWeight = ko.computed(function()
   {
