@@ -27,8 +27,8 @@ drawChart = function(element, data) {
         var options = {
           title: 'Studying progress',
           chartArea: {
-            width: 400,
-            height: 200,
+            width: 700,
+            height: 800
             }
         };
         var chartData = google.visualization.arrayToDataTable(arrayData);

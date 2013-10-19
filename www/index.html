@@ -311,14 +311,14 @@
 
       <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
           <div class="progress-img">
-              <img src="img/graph.png" class="img-rounded">
+              <div id='chart'></div>
           </div>
       </div>
       <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
           <div class="progress-img">
               <div class="btn-group">
-                  <a class="btn btn-info" href="child_index.html">Back to courses</a>
-                  <a class="btn btn-primary" href="child_test.html">Test</a>
+                  <a data-bind="click: onChildMode" class="btn btn-info">Back to courses</a>
+                  <a data-bind="click: onTestMode" class="btn btn-primary">Test</a>
               </div>
           </div>
       </div>
