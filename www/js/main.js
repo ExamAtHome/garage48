@@ -42,6 +42,7 @@ init = function(data)
     var element = $('.learning .card')
     var answer = vm.answer().replace(/\s/, '')
     var correct = (answer == vm.activeCard().rus())
+    adjustProgress(vm.cardsWeight() - (correct ? Math.max(vm.activeCard().box() - 1, 1) : 5), vm.cards().length);
 
     element.addClass('flipper').addClass('flip')
     setTimeout(function()
