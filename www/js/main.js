@@ -42,7 +42,8 @@ init = function(data)
     var element = $('.learning .card')
     var answer = vm.answer().replace(/\s/, '')
     var correct = (answer == vm.activeCard().rus())
-    adjustProgress(vm.cardsWeight() - (correct ? Math.max(vm.activeCard().box() - 1, 1) : 5), vm.cards().length);
+    var newBox = correct ? Math.max(vm.activeCard().box() - 1, 1) : 5
+    adjustProgress(vm.cardsWeight() + newBox - vm.activeCard().box(), vm.cards().length)
 
     element.addClass('flipper').addClass('flip')
     setTimeout(function()
@@ -50,7 +51,7 @@ init = function(data)
       vm.activeCardStatus(correct ? 'green' : 'red')
       element.html(vm.activeCard().rus())
       element.removeClass('flip')
-      vm.activeCard().box(correct ? Math.max(vm.activeCard().box() - 1, 1) : 5)
+      vm.activeCard().box(newBox)
       saveData()
     }, 500)
 

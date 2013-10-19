@@ -56,5 +56,13 @@ function prettyPrint( $json )
 
 $data = prettyPrint($_REQUEST['data']);
 $file = 'data/data'.$id.'.json';
-file_put_contents($file, $data);
+$fp = fopen($file, "w");
+
+if (flock($fp, LOCK_EX)) { // do an exclusive lock
+    fwrite($fp, $data);
+    flock($fp, LOCK_UN); // release the lock
+}
+
+fclose($fp);
+
 ?>
