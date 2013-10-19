@@ -3,6 +3,14 @@
       {
          "id": "course_1",
          "name": "Course. Home"
+      },
+      {
+         "id": "course_2",
+         "name": "Course. Friends"
+      },
+      {
+         "id": "course_3",
+         "name": "Course. Travel"
       }
    ],
    "lessons": [
@@ -21,7 +29,7 @@
    ],
    "cards": [
       {
-         "box": 3,
+         "box": 1,
          "id": "card_1",
          "eng": "cat",
          "rus": "кошка",
@@ -39,14 +47,14 @@
          "status": "green"
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_3",
          "eng": "horse",
          "rus": "лошадь",
          "lesson": "lesson_1"
       },
       {
-         "box": 5,
+         "box": 2,
          "id": "card_4",
          "eng": "lizard",
          "rus": "ящерица",
@@ -55,7 +63,7 @@
          "status": "red"
       },
       {
-         "box": 5,
+         "box": 3,
          "id": "card_5",
          "eng": "frog",
          "rus": "лягушка",
@@ -64,7 +72,7 @@
          "status": "red"
       },
       {
-         "box": 4,
+         "box": 2,
          "id": "card_6",
          "eng": "elephant",
          "rus": "слон",
@@ -73,7 +81,7 @@
          "status": "green"
       },
       {
-         "box": 5,
+         "box": 2,
          "id": "card_7",
          "eng": "bear",
          "rus": "медведь",
