@@ -38,13 +38,12 @@ init = function(data)
 
   vm.onCheckAnswer = function(obj)
   {
-    console.log(arguments)
-    var element = $('.learning .card')
     var answer = vm.answer().replace(/\s/, '')
     var correct = (answer == vm.activeCard().rus())
     var newBox = correct ? Math.max(vm.activeCard().box() - 1, 1) : 5
     adjustProgress(vm.cardsWeight() + newBox - vm.activeCard().box(), vm.cards().length)
 
+    var element = $('.learning .card')
     element.addClass('flipper').addClass('flip')
     setTimeout(function()
     {
@@ -79,6 +78,59 @@ init = function(data)
     vm.activeCardStatus('')
   }
 
+  /* testing */
+  vm.testSize = ko.observable(5);
+
+  vm.cardsIds = ko.computed(function()
+  {
+    var ids = [];
+    ko.utils.arrayForEach(vm.cards(), function(card) {
+      ids.push(card.id())
+    });
+    return ids;
+  }).extend({throttle: 1});
+
+  //+ Jonas Raoni Soares Silva
+  //@ http://jsfromhell.com/array/shuffle [v1.0]
+  function shuffle(o){ //v1.0
+      for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+      return o;
+  };
+
+  vm.testStatus = ko.observable('')
+
+  vm.testCards = ko.computed(function()
+  {
+    vm.testStatus('')
+
+    var testIds = shuffle(vm.cardsIds());
+    var test = ko.utils.arrayFilter(vm.cards(), function(card) {
+      return testIds.indexOf(card.id()) < vm.testSize()
+    });
+    var i = 0, l = test.length;
+    for(; i < l; i++)
+    {
+      test[i].answer = ko.observable('')
+      test[i].status = ko.observable('')
+    }
+    return test
+  }).extend({throttle: 1});
+
+  vm.onCheckTest = function()
+  {
+    vm.testStatus('checked')
+
+    ko.utils.arrayForEach(vm.testCards(), function(card)
+    {
+      var correct = (card.answer() == card.rus())
+        , newBox = correct ? Math.max(card.box() - 1, 1) : 5
+      card.status(correct ? 'green' : 'red')
+      card.box(newBox)
+    });
+    saveData()
+  }
+
+  /* we start here */
   ko.applyBindings(vm)
   vm.onNextCard()
 };

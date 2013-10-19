@@ -21,21 +21,25 @@
    ],
    "cards": [
       {
-         "box": 4,
+         "box": 3,
          "id": "card_1",
          "eng": "cat",
          "rus": "кошка",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "кошка",
+         "status": "green"
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_2",
          "eng": "dog",
          "rus": "собака",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "собака",
+         "status": "green"
       },
       {
-         "box": 3,
+         "box": 5,
          "id": "card_3",
          "eng": "horse",
          "rus": "лошадь",
@@ -46,28 +50,36 @@
          "id": "card_4",
          "eng": "lizard",
          "rus": "ящерица",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": "red"
       },
       {
          "box": 5,
          "id": "card_5",
          "eng": "frog",
          "rus": "лягушка",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": "red"
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_6",
          "eng": "elephant",
          "rus": "слон",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "слон",
+         "status": "green"
       },
       {
-         "box": 3,
+         "box": 5,
          "id": "card_7",
          "eng": "bear",
          "rus": "медведь",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": "red"
       }
    ]
 }

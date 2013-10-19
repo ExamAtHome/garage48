@@ -24,26 +24,25 @@
         text-align: center;
       }
 
-      .card.red
+      .card.red, .checked .red
       {
         background-color: #faa;
       }
 
-      .card.green
+      .card.green, .checked .green
       {
         background-color: #afa;
       }
 
       .flipper{
-          -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s ease-in;
-          transition:width 0.5s, height 0.5s, transform 0.5s ease-in;
+        -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s ease-in;
+        transition:width 0.5s, height 0.5s, transform 0.5s ease-in;
       }
 
       .flip{
-          -webkit-transform:rotateY(90deg);
-          transform:rotateY(90deg);
+        -webkit-transform:rotateY(90deg);
+        transform:rotateY(90deg);
       }
-
     </style>
   </head>
 
@@ -68,10 +67,22 @@
       <div data-bind="with: activeCard">
         <h2 data-bind="text: eng, css: $root.activeCardStatus()" class="card"></h2>
       </div>
-      <input data-bind="value: answer">
-      <a data-bind="click: onCheckAnswer" class=".btn" href="#">check</a>
-      <a data-bind="click: onNextCard" class=".btn" href="#">next</a>
+      <input data-bind="value: answer" type="text">
+      <a data-bind="click: onCheckAnswer" class="btn" href="#">check</a>
+      <a data-bind="click: onNextCard" class="btn" href="#">next</a>
     </div>
     <span id='chart'></span>
+
+    <div class="testing">
+      <div data-bind="foreach: testCards">
+        <div data-bind="css: $root.testStatus">
+          <span data-bind="text:eng"></span>
+          <input data-bind="value: answer, css: status" type="text">
+        </div>
+      </div>
+      <div>
+        <a data-bind="click: $root.onCheckTest" class="btn" href="#">check test</a>
+      </div>
+    </div>
   </body>
 </html>
