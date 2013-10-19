@@ -107,6 +107,16 @@ init = function(data)
       return o;
   };
 
+  vm.variantCards = ko.computed(function()
+  {
+    var testIds = shuffle(vm.cardsIds())
+    var test = ko.utils.arrayFilter(vm.cards(), function(card) {
+      return testIds.indexOf(card.id()) < 3
+    })
+    test.push(vm.activeCard())
+    return shuffle(test)
+  });
+
   vm.testStatus = ko.observable('')
 
   vm.testCards = ko.computed(function()
@@ -138,6 +148,12 @@ init = function(data)
       card.box(newBox)
     });
     saveData()
+  }
+
+  vm.onSelectAnswer = function(obj)
+  {
+    vm.answer(obj.rus());
+    vm.onCheckAnswer();
   }
 
   vm.mode = ko.observable('index')

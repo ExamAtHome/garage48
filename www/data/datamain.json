@@ -1,4 +1,4 @@
-﻿{
+{
    "courses": [
       {
          "id": "course_2",
@@ -45,20 +45,22 @@
    ],
    "cards": [
       {
-         "box": 5,
+         "box": 4,
          "id": "card_1",
          "eng": "cat",
          "rus": "кошка",
          "lesson": "lesson_1",
          "answer": "",
-         "status": "red"
+         "status": ""
       },
       {
          "box": 5,
          "id": "card_2",
          "eng": "dog",
          "rus": "собака",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 3,
@@ -72,7 +74,9 @@
          "id": "card_4",
          "eng": "hamster",
          "rus": "хомяк",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 4,
@@ -86,28 +90,36 @@
          "id": "card_6",
          "eng": "guiney pig",
          "rus": "морская свинка",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
          "id": "card_7",
          "eng": "parrot",
          "rus": "попугай",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": ""
       },
       {
-         "box": 4,
+         "box": 3,
          "id": "card_8",
          "eng": "snake",
          "rus": "змея",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
          "id": "card_9",
          "eng": "rabbit",
          "rus": "кролик",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
@@ -116,14 +128,16 @@
          "rus": "паук",
          "lesson": "lesson_1",
          "answer": "",
-         "status": "red"
+         "status": ""
       },
       {
          "box": 3,
          "id": "card_11",
          "eng": "bread",
          "rus": "хлеб",
-         "lesson": "lesson_2"
+         "lesson": "lesson_2",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
@@ -137,14 +151,18 @@
          "id": "card_13",
          "eng": "cucumber",
          "rus": "огурец",
-         "lesson": "lesson_2"
+         "lesson": "lesson_2",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
          "id": "card_14",
          "eng": "orange",
          "rus": "апельсин",
-         "lesson": "lesson_2"
+         "lesson": "lesson_2",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 4,
@@ -158,28 +176,36 @@
          "id": "card_16",
          "eng": "egg",
          "rus": "яйцо",
-         "lesson": "lesson_2"
+         "lesson": "lesson_2",
+         "answer": "",
+         "status": ""
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_17",
          "eng": "onion",
          "rus": "лук",
-         "lesson": "lesson_2"
+         "lesson": "lesson_2",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
          "id": "card_18",
          "eng": "tomato",
          "rus": "помидор",
-         "lesson": "lesson_2"
+         "lesson": "lesson_2",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 4,
          "id": "card_19",
          "eng": "cookie",
          "rus": "печенье",
-         "lesson": "lesson_2"
+         "lesson": "lesson_2",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
@@ -193,14 +219,18 @@
          "id": "card_21",
          "eng": "water",
          "rus": "вода",
-         "lesson": "lesson_3"
+         "lesson": "lesson_3",
+         "answer": "",
+         "status": ""
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_22",
          "eng": "milk",
          "rus": "молоко",
-         "lesson": "lesson_3"
+         "lesson": "lesson_3",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 3,
@@ -217,18 +247,22 @@
          "lesson": "lesson_3"
       },
       {
-         "box": 4,
+         "box": 5,
          "id": "card_25",
          "eng": "beer",
          "rus": "пиво",
-         "lesson": "lesson_3"
+         "lesson": "lesson_3",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 4,
          "id": "card_26",
          "eng": "tea",
          "rus": "чай",
-         "lesson": "lesson_3"
+         "lesson": "lesson_3",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
@@ -245,21 +279,25 @@
          "lesson": "lesson_3"
       },
       {
-         "box": 4,
+         "box": 3,
          "id": "card_29",
          "eng": "jelly",
          "rus": "кисель",
-         "lesson": "lesson_3"
+         "lesson": "lesson_3",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
          "id": "card_30",
          "eng": "vodka",
          "rus": "водка",
-         "lesson": "lesson_3"
+         "lesson": "lesson_3",
+         "answer": "",
+         "status": ""
       },
       {
-         "box": 3,
+         "box": 2,
          "id": "card_31",
          "eng": "fork",
          "rus": "вилка",
@@ -280,14 +318,16 @@
          "lesson": "lesson_4"
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_34",
          "eng": "mug",
          "rus": "кружка",
-         "lesson": "lesson_4"
+         "lesson": "lesson_4",
+         "answer": "",
+         "status": ""
       },
       {
-         "box": 4,
+         "box": 3,
          "id": "card_35",
          "eng": "plate",
          "rus": "тарелка",
@@ -298,21 +338,27 @@
          "id": "card_36",
          "eng": "pot",
          "rus": "кастрюля",
-         "lesson": "lesson_4"
+         "lesson": "lesson_4",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,
          "id": "card_37",
          "eng": "griddle",
          "rus": "сковородка",
-         "lesson": "lesson_4"
+         "lesson": "lesson_4",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 4,
          "id": "card_38",
          "eng": "plank",
          "rus": "доска",
-         "lesson": "lesson_4"
+         "lesson": "lesson_4",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 4,
@@ -329,7 +375,7 @@
          "lesson": "lesson_4"
       },
       {
-         "box": 3,
+         "box": 5,
          "id": "card_41",
          "eng": "table",
          "rus": "стол",
@@ -342,7 +388,7 @@
          "rus": "стул",
          "lesson": "lesson_5",
          "answer": "",
-         "status": "red"
+         "status": ""
       },
       {
          "box": 5,
@@ -351,10 +397,10 @@
          "rus": "кровать",
          "lesson": "lesson_5",
          "answer": "",
-         "status": "red"
+         "status": ""
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_44",
          "eng": "bedside",
          "rus": "тумбочка",
@@ -367,7 +413,9 @@
          "id": "card_45",
          "eng": "sofa",
          "rus": "диван",
-         "lesson": "lesson_5"
+         "lesson": "lesson_5",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 4,
@@ -384,7 +432,7 @@
          "lesson": "lesson_5"
       },
       {
-         "box": 4,
+         "box": 3,
          "id": "card_48",
          "eng": "door",
          "rus": "дверь",
@@ -395,7 +443,9 @@
          "id": "card_49",
          "eng": "floor",
          "rus": "кабинет",
-         "lesson": "lesson_5"
+         "lesson": "lesson_5",
+         "answer": "",
+         "status": ""
       },
       {
          "box": 5,

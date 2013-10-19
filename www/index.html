@@ -292,19 +292,30 @@
           </ul>
       </div>
 
-
       <div data-bind="visible: $root.mode() == 'train'" class="row-fluid">
-        <div data-bind="with: activeCard" class="learning">
-            <div data-bind="css: $root.activeCardStatus()" class="alert-info card-text card">
-                <p data-bind="text: eng">Cat</p>
+        <div class="row-fluid">
+          <div class="span6">
+            <div data-bind="with: activeCard" class="learning">
+                <div data-bind="css: $root.activeCardStatus()" class="alert-info card-text card">
+                    <p data-bind="text: eng">Cat</p>
+                </div>
             </div>
-        </div>
-        <div class="input-form">
-          <div class="input-append">
-            <input data-bind="value: answer" class="span2 input-text" id="" type="text">
-            <a data-bind="click: onCheckAnswer" class="btn btn-primary" type="button">Check</a>
           </div>
-          <a data-bind="click: onNextCard" class="btn btn-primary" type="button">Next</a>
+          <div class="span6">
+            <div class="input-form">
+              <div class="input-append" style="display: none">
+                <input data-bind="value: answer" class="span2 input-text" id="" type="text">
+                <a data-bind="click: onCheckAnswer" class="btn btn-primary" type="button">Check</a>
+              </div>
+              <!-- ko foreach: $root.variantCards -->
+                <a data-bind="click: $root.onSelectAnswer, text:rus"
+                   class="btn btn-info span12" style="margin-bottom: 12px;" type="button"></a>
+              <!-- /ko -->
+              <a data-bind="click: onNextCard" class="btn btn-primary span12" type="button">
+                Next card
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
