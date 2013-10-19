@@ -1,14 +1,25 @@
 {
    "courses": [
       {
+         "id": "course_2",
+         "name": "Course. Friends",
+         "desc": ""
+      },
+      {
+         "id": "course_3",
+         "name": "Course. Travel",
+         "desc": ""
+      },
+      {
          "id": "course_1",
-         "name": "Course. Home"
+         "name": "Course. Home",
+         "desc": ""
       }
    ],
    "lessons": [
       {
          "id": "lesson_1",
-         "name": "Lesson1. Pets #1"
+         "name": "Lesson1. Pets"
       },
       {
          "id": "lesson_2",
@@ -29,11 +40,13 @@
    ],
    "cards": [
       {
-         "box": 3,
+         "box": 5,
          "id": "card_1",
          "eng": "cat",
          "rus": "кошка",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": "red"
       },
       {
          "box": 5,
@@ -85,7 +98,7 @@
          "lesson": "lesson_1"
       },
       {
-         "box": 4,
+         "box": 5,
          "id": "card_9",
          "eng": "rabbit",
          "rus": "кролик",
@@ -96,7 +109,9 @@
          "id": "card_10",
          "eng": "spider",
          "rus": "паук",
-         "lesson": "lesson_1"
+         "lesson": "lesson_1",
+         "answer": "",
+         "status": "red"
       },
       {
          "box": 3,
@@ -148,7 +163,7 @@
          "lesson": "lesson_2"
       },
       {
-         "box": 4,
+         "box": 5,
          "id": "card_18",
          "eng": "tomato",
          "rus": "помидор",
@@ -320,21 +335,27 @@
          "id": "card_42",
          "eng": "chair",
          "rus": "стул",
-         "lesson": "lesson_5"
+         "lesson": "lesson_5",
+         "answer": "",
+         "status": "red"
       },
       {
-         "box": 3,
+         "box": 5,
          "id": "card_43",
          "eng": "bed",
          "rus": "кровать",
-         "lesson": "lesson_5"
+         "lesson": "lesson_5",
+         "answer": "",
+         "status": "red"
       },
       {
          "box": 5,
          "id": "card_44",
          "eng": "bedside",
          "rus": "тумбочка",
-         "lesson": "lesson_5"
+         "lesson": "lesson_5",
+         "answer": "",
+         "status": "red"
       },
       {
          "box": 4,
@@ -377,6 +398,22 @@
          "eng": "basket",
          "rus": "корзина",
          "lesson": "lesson_5"
+      }
+   ],
+   "children": [
+      {
+         "name": "Bob",
+         "courses": [
+            {
+               "id": "course_1",
+               "name": "Course. Home"
+            }
+         ]
+      },
+      {
+         "name": "Alice",
+         "courses": [
+         ]
       }
    ]
 }
