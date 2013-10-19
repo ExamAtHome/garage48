@@ -1,6 +1,7 @@
 $(function()
 {
   readdata('main', init);
+  drawChart();
 });
 
 saveData = function()
