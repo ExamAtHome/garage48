@@ -1,7 +1,27 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
+    <title>ExamAtHome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
 
     <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="js/knockout-latest.js"></script>
@@ -9,82 +29,219 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
 
-    <style>
-      .card
-      {
-        padding: 20px;
-        background-color: #aaf;
-        border: 1px solid gray;
-        width: 300px;
-        height: 160px;
-        display: table-cell;
-        vertical-align: middle;
-        font-size: 80px;
-        text-align: center;
-      }
+<body>
 
-      .card.red, .checked .red
-      {
-        background-color: #faa;
-      }
 
-      .card.green, .checked .green
-      {
-        background-color: #afa;
-      }
+<!-- Part 1: Wrap all page content here -->
+<div id="wrap">
 
-      .flipper{
-        -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s ease-in;
-        transition:width 0.5s, height 0.5s, transform 0.5s ease-in;
-      }
-
-      .flip{
-        -webkit-transform:rotateY(90deg);
-        transform:rotateY(90deg);
-      }
-    </style>
-  </head>
-
-  <body>
-    <div>
-      <div data-bind="foreach: courses">
-        <div data-bind="text: name, click: $root.onSelectCourse"></div>
-      </div>
-      <div data-bind="foreach: lessons">
-        <div data-bind="text: name, click: $root.onSelectLesson"></div>
-      </div>
-      <div data-bind="foreach: currentCards">
-        <div>
-            <span data-bind="text: rus"></span>
-          - <span data-bind="text: eng"></span>
-          : <span data-bind="text: (box()/$root.cardsWeight() * 100).toFixed(2)"></span>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="index.html">ExamAtHome</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subjects <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="english.html">English</a></li>
+                                <li class="disabled"><a href="#">Mathematics</a></li>
+                                <li class="disabled"><a href="#">Literature</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
         </div>
-      </div>
     </div>
 
-    <div class="learning">
-      <div data-bind="with: activeCard">
-        <h2 data-bind="text: eng, css: $root.activeCardStatus()" class="card"></h2>
-      </div>
-      <input data-bind="value: answer" type="text">
-      <a data-bind="click: onCheckAnswer" class="btn" href="#">check</a>
-      <a data-bind="click: onNextCard" class="btn" href="#">next</a>
-    </div>
+    <!-- Begin page content -->
+    <div class="container">
 
-    <div class="testing">
-      <div data-bind="foreach: testCards">
-        <div data-bind="css: $root.testStatus">
-          <span data-bind="text:eng"></span>
-          <input data-bind="value: answer, css: status" type="text">
+        <div data-bind="visible: $root.mode() == 'english'" class="row-fluid">
+            <div class="span3">
+
+                <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header"><span style="font-size: 14px; color: #555555;">Choose courses for your child</span></li>
+                        <li class="divider"></li>
+                        <li class="nav-header">Built-in courses</li>
+                        <div data-bind="foreach: courses">
+                          <li data-bind="text: name, click: $root.onSelectCourse">
+                          </li>
+                        </div>
+                            <ul data-bind="foreach: lessons" class="nav nav-list">
+                                <li data-bind="text: name, click: $root.onSelectLesson"></li>
+                            </ul>
+                        <li class="nav-header">Author courses</li>
+                        <li class="disabled"><a href="#">FCE cource</a></li>
+                        <li class="disabled"><a href="#">TOEFL cource</a></li>
+                    </ul>
+                </div><!--/.well -->
+
+                <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header"><span style="font-size: 14px; color: #555555;">Begin child education</span></li>
+                        <div data-bind="foreach: children">
+                          <li class="divider"></li>
+                          <li class="nav-header"><span data-bind="text: name"></span>
+                            <button data-bind="click: $root.onChildMode, enable: courses().length > 0"
+                                    class="btn btn-mini btn-primary pull-right" type="button">Begin
+                            </button>
+                          </li>
+                          <div data-bind="foreach: courses">
+                          <li><a data-bind="text: name" href="english_course1.html">Chosen course 1</a></li>
+                          </div>
+                          <span data-bind="if: courses().length==0" class="nav-small-text">No courses have been selected</span>
+                        </div>
+                    </ul>
+                </div><!--/.well -->
+
+            </div><!--/span-->
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                    <li class="active">English</li>
+                </ul>
+                <div class="hero-unit">
+                    <h1>English</h1>
+                    <p>Speaking English is nowadays one of the most important skills. During this course you will study lots of interesting stuff and test yourself on the knowlege of...</p>
+                </div>
+                <div class="page-header">
+                    <h1>Built-in courses <small>These are the series of courses, that are pre-installed in you educational program. You are going to...</small></h1>
+                </div>
+                <div data-bind="foreach: courses" class="row-fluid">
+                    <div class="span4">
+                        <h3 data-bind="text: name"></h3>
+                        <p data-bind="text: desc"></p>
+                        <p></p>
+                        <div class="btn-group">
+                            <a data-bind="click: $root.onSelectCourse" class="btn btn-primary">View</a>
+                            <a class="btn btn-info">Add this to</a>
+                            <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <div data-bind="foreach: $root.children">
+                                <li><a data-bind="text: name" href="#"></a></li>
+                              </div>
+                            </ul>
+                        </div>
+                    </div><!--/span-->
+                </div><!--/row-->
+                <div class="page-header">
+                    <h1>Author courses <small>These are the series of courses, that are created by the most professionnal people in the Internet education. You are going to...</small></h1>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <h3>FCE cource</h3>
+                        <p>This course will allow you to...</p>
+                        <p><a href="pets.html" class="btn btn-primary disabled">View</a></p>
+                    </div><!--/span-->
+                    <div class="span4">
+                        <h3>TOEFL cource</h3>
+                        <p>This course will allow you to...</p>
+                        <p><a href="#" class="btn btn-primary disabled">View</a></p>
+                    </div><!--/span-->
+                </div><!--/row-->
+            </div><!--/span-->
         </div>
+
+      <div data-bind="visible: $root.mode() == 'child'" class="row-fluid">
+          <ul class="thumbnails">
+              <li class="span4">
+                  <div class="thumbnail">
+                      <img data-bind="click: $root.onTrainMode" alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img1.png">
+                      <div class="caption">
+                          <h3>English</h3>
+                          <p>English course description in some words...</p>
+                          <div class="btn-group">
+                          <a data-bind="click: $root.onTrainMode" class="btn btn-info" href="child_train.html">Learn</a>
+                          <a class="btn btn-primary" href="child_test.html">Test</a>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="span4">
+                  <div class="thumbnail">
+                      <img alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img2.png">
+                      <div class="caption">
+                          <h3>Mathematics</h3>
+                          <p>This course is yet disabled due to some reasons.</p>
+                          <p><a class="btn btn-primary disabled" href="#">Start</a></p>
+                      </div>
+                  </div>
+              </li>
+              <li class="span4">
+                  <div class="thumbnail">
+                      <img alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img3.png">
+                      <div class="caption">
+                          <h3>Russian</h3>
+                          <p>This course is yet disabled due to some reasons.</p>
+                          <p><a class="btn btn-primary disabled" href="#">Start</a></p>
+                      </div>
+                  </div>
+              </li>
+          </ul>
       </div>
-      <div>
-        <a data-bind="click: $root.onCheckTest" class="btn" href="#">check test</a>
+
+      <div data-bind="visible: $root.mode() == 'train'" class="row-fluid">
+          <div class="alert-info card-text">
+              <p>Cat</p>
+          </div>
+          <div class="input-form">
+              <div class="input-append">
+                  <input class="span2 input-text" id="" type="text">
+                  <a class="btn btn-primary" type="button" href="child_progress.html">Check</a>
+              </div>
+          </div>
+
+          <div class="alert-success card-text">
+              <p>Cat</p>
+          </div>
+          <div class="input-form">
+              <div class="input-append">
+                  <input class="span2 input-text" id="" type="text">
+                  <a class="btn btn-primary" type="button" href="child_progress.html">Check</a>
+              </div>
+          </div>
+
+          <div class="alert-error card-text">
+              <p>Cat</p>
+          </div>
+          <div class="input-form">
+              <div class="input-append">
+                  <input class="span2 input-text" id="" type="text">
+                  <a class="btn btn-primary" type="button" href="child_progress.html">Check</a>
+              </div>
+          </div>
+
       </div>
+
+
     </div>
 
-    <div id='chart'></div>
+    <div id="push"></div>
+</div>
 
-  </body>
+<div id="footer">
+    <div class="container">
+        <p class="muted credit">Some copyright text, 2013</p>
+    </div>
+</div>
+
+
+<!-- Le javascript
+================================================== -->
+
+</body>
 </html>

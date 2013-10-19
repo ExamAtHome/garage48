@@ -131,6 +131,17 @@ init = function(data)
     saveData()
   }
 
+  vm.mode = ko.observable('english')
+  vm.onChildMode = function()
+  {
+    vm.mode('child')
+  }
+
+  vm.onTrainMode = function()
+  {
+    vm.mode('train')
+  }
+
   /* we start here */
   ko.applyBindings(vm)
   vm.onNextCard()

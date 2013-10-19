@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/knockout-latest.js"></script>
+    <script src="js/knockout.mapping.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+      .card
+      {
+        padding: 20px;
+        background-color: #aaf;
+        border: 1px solid gray;
+        width: 300px;
+        height: 160px;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 80px;
+        text-align: center;
+      }
+
+      .card.red, .checked .red
+      {
+        background-color: #faa;
+      }
+
+      .card.green, .checked .green
+      {
+        background-color: #afa;
+      }
+
+      .flipper{
+        -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s ease-in;
+        transition:width 0.5s, height 0.5s, transform 0.5s ease-in;
+      }
+
+      .flip{
+        -webkit-transform:rotateY(90deg);
+        transform:rotateY(90deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div data-bind="foreach: courses">
+        <div data-bind="text: name, click: $root.onSelectCourse"></div>
+      </div>
+      <div data-bind="foreach: lessons">
+        <div data-bind="text: name, click: $root.onSelectLesson"></div>
+      </div>
+      <div data-bind="foreach: currentCards">
+        <div>
+            <span data-bind="text: rus"></span>
+          - <span data-bind="text: eng"></span>
+          : <span data-bind="text: (box()/$root.cardsWeight() * 100).toFixed(2)"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="learning">
+      <div data-bind="with: activeCard">
+        <h2 data-bind="text: eng, css: $root.activeCardStatus()" class="card"></h2>
+      </div>
+      <input data-bind="value: answer" type="text">
+      <a data-bind="click: onCheckAnswer" class="btn" href="#">check</a>
+      <a data-bind="click: onNextCard" class="btn" href="#">next</a>
+    </div>
+
+    <div class="testing">
+      <div data-bind="foreach: testCards">
+        <div data-bind="css: $root.testStatus">
+          <span data-bind="text:eng"></span>
+          <input data-bind="value: answer, css: status" type="text">
+        </div>
+      </div>
+      <div>
+        <a data-bind="click: $root.onCheckTest" class="btn" href="#">check test</a>
+      </div>
+    </div>
+
+    <div id='chart'></div>
+
+  </body>
+</html>
