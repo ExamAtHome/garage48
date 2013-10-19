@@ -136,7 +136,7 @@
                             </button>
                           </li>
                           <div data-bind="foreach: courses">
-                          <li><a data-bind="text: name" href="english_course1.html"></a></li>
+                          <li><a data-bind="click: $root.onProgressMode, text: name"></a></li>
                           </div>
                           <span data-bind="if: courses().length==0" class="nav-small-text">No courses have been selected</span>
                         </div>
@@ -311,7 +311,7 @@
 
       <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
           <div class="progress-img">
-              <div id='chart'></div>
+              <div class="chart" id='chart'></div>
           </div>
       </div>
       <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
