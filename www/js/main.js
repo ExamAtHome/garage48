@@ -194,5 +194,6 @@ init = function(data)
 
   /* we start here */
   ko.applyBindings(vm)
+  vm.onEnglishMode()
   vm.onNextCard()
 };

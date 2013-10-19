@@ -85,6 +85,7 @@
                 <a data-bind="click: $root.onIndexMode" class="brand">ExamAtHome</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
+                        <!--
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subjects <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -93,6 +94,15 @@
                                 <li class="disabled"><a href="#">Literature</a></li>
                             </ul>
                         </li>
+                        -->
+                        <li><a data-bind="click: $root.onEnglishMode">English</a></li>
+                        <li><a data-bind="click: $root.onChildMode">Child</a></li>
+                        <li><a data-bind="click: $root.onTrainMode">Train</a></li>
+                        <li><a data-bind="click: $root.onProgressMode">Progress</a></li>
+                        <li><a data-bind="click: $root.onCourseMode">Course</a></li>
+                        <li><a data-bind="click: $root.onLessonMode">Lesson</a></li>
+                        <li><a data-bind="click: $root.onTestMode">Test</a></li>
+
                         <li><a data-bind="click: $root.onAboutMode">About</a></li>
                         <li><a data-bind="click: $root.onContactMode">Contact</a></li>
                     </ul>
@@ -351,9 +361,6 @@
           <div class="span2">
               <div class="well well-large">
                   <a data-bind="click: $root.onCheckTest" class="btn btn-primary btn-block">Check</a>
-              </div>
-              <div class="well well-large">
-                  <a class="btn btn-block">Put correct variants</a>
               </div>
           </div>
 
