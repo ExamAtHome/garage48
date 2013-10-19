@@ -1,0 +1,79 @@
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: 60px;
+}
+#footer {
+    background-color: #f5f5f5;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+    padding-top: 60px;
+}
+.container .credit {
+    margin: 20px 0;
+}
+.input-text {
+    width: 234px !important;
+}
+.nav-small-text {
+    font-size: 10px;
+}
+.card-text {
+    border-radius: 6px 6px 6px 6px;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto 10px auto;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 200px;
+    font-size: 36px;
+    font-weight: 700;
+}
+.input-form {
+    margin: 0 auto 20px auto;
+    width: 300px;
+}
+.progress-img {
+    margin: 0 auto;
+    width: 500px;
+}
+.result {
+    font-size: 20px;
+}
+.result-label {
+    line-height: 20px;
+    margin: -1px 0 0 20px;
+    position: absolute;
+}

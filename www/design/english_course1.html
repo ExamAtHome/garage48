@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ExamAtHome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+</head>
+
+<body>
+
+
+<!-- Part 1: Wrap all page content here -->
+<div id="wrap">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="index.html">ExamAtHome</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subjects <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="english.html">English</a></li>
+                                <li class="disabled"><a href="#">Mathematics</a></li>
+                                <li class="disabled"><a href="#">Literature</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Begin page content -->
+    <div class="container">
+
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Built-in courses</li>
+                        <li class="active"><a href="english_course1.html">Course 1 (Basic)</a></li>
+                        <ul class="nav nav-list">
+                            <li><a href="pets.html">Lesson 1: pets</a></li>
+                            <li class="disabled"><a href="#">Lesson 2: family</a></li>
+                            <li class="disabled"><a href="#">Lesson 3: friends</a></li>
+                        </ul>
+                        <li class="disabled"><a href="#">Course 2 (Advanced)</a></li>
+                        <li class="disabled"><a href="#">Course 3 (Professional)</a></li>
+                        <li class="nav-header">Author courses</li>
+                        <li class="disabled"><a href="#">FCE cource</a></li>
+                        <li class="disabled"><a href="#">TOEFL cource</a></li>
+                    </ul>
+                </div><!--/.well -->
+                <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header"><span style="font-size: 14px; color: #555555;">Begin child education</span></li>
+                        <li class="divider"></li>
+                        <li class="nav-header">Child 1 <button class="btn btn-mini btn-primary pull-right" type="button">Begin</button></li>
+                        <li><a href="english_course1.html">Chosen course 1</a></li>
+                        <li class="nav-header">Child 2 <button class="btn btn-mini btn-primary pull-right disabled" type="button">Begin</button></li>
+                        <span class="nav-small-text">No courses have been selected</span>
+                    </ul>
+                </div><!--/.well -->
+            </div><!--/span-->
+            <div class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href="english.html">English</a> <span class="divider">/</span></li>
+                    <li class="active">Course 1 (Basic)</li>
+                </ul>
+                <p>This course will help you to learn some basic English vocabulary...</p>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <h3>Lesson 1</h3>
+                        <p>During this lesson you will meet new names of the pets. Here are several words that will be included in the lesson:</p>
+                        <p><code>cat</code>
+                            <code>dog</code>
+                            <code>horse</code>
+                            <code>lizard</code>
+                            <code>frog</code>
+                            <code>elephant</code>
+                            <code>bear</code>
+                        </p>
+                        <p>For complete words list please view the lesson.</p>
+
+                        <div class="btn-group">
+                            <a href="pets.html" class="btn btn-primary">View</a>
+                            <a class="btn btn-info">Add this to</a>
+                            <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Child 1</a></li>
+                                <li><a href="#">Child 2</a></li>
+                            </ul>
+                        </div>
+
+                    </div><!--/span-->
+                    <div class="span4">
+                        <h3>Lesson 2</h3>
+                        <p>During this lesson you will meet your closest people - your family. You will...</p>
+                        <p><a href="#" class="btn btn-primary disabled">View lesson</a></p>
+                    </div><!--/span-->
+                    <div class="span4">
+                        <h3>Lesson 3</h3>
+                        <p>This lesson is all about your friends. You will...</p>
+                        <p><a href="#" class="btn btn-primary disabled">View lesson</a></p>
+                    </div><!--/span-->
+                </div><!--/row-->
+            </div><!--/span-->
+        </div>
+
+    </div>
+
+    <div id="push"></div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <p class="muted credit">Some copyright text, 2013</p>
+    </div>
+</div>
+
+
+<!-- Le javascript
+================================================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</body>
+</html>
