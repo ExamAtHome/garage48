@@ -23,6 +23,41 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="../assets/ico/favicon.png">
 
+    <style>
+      .learning
+      {
+        text-align: center;
+      }
+
+      .card
+      {
+        padding: 20px;
+        background-color: #aaf;
+        border: 1px solid gray;
+        text-align: center;
+      }
+
+      .card.red, .checked .red
+      {
+        background-color: #faa;
+      }
+
+      .card.green, .checked .green
+      {
+        background-color: #afa;
+      }
+
+      .flipper{
+        -webkit-transition:width 0.5s, height 0.5s, -webkit-transform 0.5s ease-in;
+        transition:width 0.5s, height 0.5s, transform 0.5s ease-in;
+      }
+
+      .flip{
+        -webkit-transform:rotateY(90deg);
+        transform:rotateY(90deg);
+      }
+    </style>
+
     <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="js/knockout-latest.js"></script>
     <script src="js/knockout.mapping.js"></script>
@@ -247,39 +282,32 @@
           </ul>
       </div>
 
+
       <div data-bind="visible: $root.mode() == 'train'" class="row-fluid">
-          <div class="alert-info card-text">
-              <p>Cat</p>
-          </div>
-          <div class="input-form">
-              <div class="input-append">
-                  <input class="span2 input-text" id="" type="text">
-                  <a class="btn btn-primary" type="button" href="child_progress.html">Check</a>
-              </div>
-          </div>
 
-          <div class="alert-success card-text">
-              <p>Cat</p>
-          </div>
-          <div class="input-form">
-              <div class="input-append">
-                  <input class="span2 input-text" id="" type="text">
-                  <a class="btn btn-primary" type="button" href="child_progress.html">Check</a>
-              </div>
-          </div>
+<!--
+        <div data-bind="with: activeCard">
+          <h2 data-bind="text: eng, css: $root.activeCardStatus()" class="card"></h2>
+        </div>
+        <input data-bind="value: answer" type="text">
+        <a data-bind="click: onCheckAnswer" class="btn" href="#">check</a>
+        <a data-bind="click: onNextCard" class="btn" href="#">next</a>
+-->
 
-          <div class="alert-error card-text">
-              <p>Cat</p>
+        <div data-bind="with: activeCard" class="learning">
+            <div data-bind="css: $root.activeCardStatus()" class="alert-info card-text card">
+                <p data-bind="text: eng">Cat</p>
+            </div>
+        </div>
+        <div class="input-form">
+          <div class="input-append">
+            <input data-bind="value: answer" class="span2 input-text" id="" type="text">
+            <a data-bind="click: onCheckAnswer" class="btn btn-primary" type="button">Check</a>
           </div>
-          <div class="input-form">
-              <div class="input-append">
-                  <input class="span2 input-text" id="" type="text">
-                  <a class="btn btn-primary" type="button" href="child_progress.html">Check</a>
-              </div>
-          </div>
+          <a data-bind="click: onNextCard" class="btn btn-primary" type="button">Next</a>
+        </div>
 
       </div>
-
 
       <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
           <div class="progress-img">

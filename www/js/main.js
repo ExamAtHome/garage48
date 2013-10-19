@@ -85,6 +85,7 @@ init = function(data)
 
     vm.activeCard(card)
     vm.activeCardStatus('')
+    vm.answer('')
   }
 
   /* testing */
