@@ -231,16 +231,6 @@
 
 
       <div data-bind="visible: $root.mode() == 'train'" class="row-fluid">
-
-<!--
-        <div data-bind="with: activeCard">
-          <h2 data-bind="text: eng, css: $root.activeCardStatus()" class="card"></h2>
-        </div>
-        <input data-bind="value: answer" type="text">
-        <a data-bind="click: onCheckAnswer" class="btn" href="#">check</a>
-        <a data-bind="click: onNextCard" class="btn" href="#">next</a>
--->
-
         <div data-bind="with: activeCard" class="learning">
             <div data-bind="css: $root.activeCardStatus()" class="alert-info card-text card">
                 <p data-bind="text: eng">Cat</p>
@@ -253,7 +243,6 @@
           </div>
           <a data-bind="click: onNextCard" class="btn btn-primary" type="button">Next</a>
         </div>
-
       </div>
     </div>
 
