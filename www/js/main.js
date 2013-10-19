@@ -89,7 +89,7 @@ init = function(data)
   }
 
   /* testing */
-  vm.testSize = ko.observable(5);
+  vm.testSize = ko.observable(10);
 
   vm.cardsIds = ko.computed(function()
   {

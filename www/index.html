@@ -320,28 +320,29 @@
       </div>
 
       <div data-bind="visible: $root.mode() == 'test'" class="row-fluid">
-
-          <div class="span5">
-              <div class="well well-large">
-                  <div class="control-group">
-                      <label for="" class="control-label">Label</label>
-                      <div class="controls">
-                          <input type="text" id="" placeholder="Input" class="input-large">
-                          <span class="help-inline">Result</span>
-                      </div>
-                  </div>
-                  <div class="control-group success">
-                      <label for="inputSuccess" class="control-label">Cat</label>
-                      <div class="controls">
-                          <input type="text" id="inputSuccess" placeholder="Кошка" class="input-large">
-                          <span class="help-inline">Correct</span>
-                      </div>
-                  </div>
-                  <div class="control-group error">
-                      <label class="control-label" for="inputError">Horse</label>
-                      <div class="controls">
-                          <input type="text" id="inputError" placeholder="Кошка">
-                          <span class="help-inline">Incorrect</span>
+<!--
+    <div class="testing">
+      <div data-bind="foreach: testCards">
+        <div data-bind="css: $root.testStatus">
+          <span data-bind="text:eng"></span>
+          <input data-bind="value: answer, css: status" type="text">
+        </div>
+      </div>
+      <div>
+        <a data-bind="click: $root.onCheckTest" class="btn" href="#">check test</a>
+      </div>
+    </div>
+-->
+          <div class="span5 testing">
+              <div data-bind="css: $root.testStatus">
+                  <div data-bind="foreach: testCards" class="well well-large">
+                      <div class="control-group">
+                          <label data-bind="text:eng" for="" class="control-label"></label>
+                          <div class="controls">
+                              <input data-bind="value: answer, css: status"
+                                     type="text" id="" placeholder="Input" class="input-large">
+                              <!-- <span class="help-inline">Result</span> -->
+                          </div>
                       </div>
                   </div>
               </div>
@@ -349,7 +350,7 @@
 
           <div class="span2">
               <div class="well well-large">
-                  <a class="btn btn-primary btn-block">Check</a>
+                  <a data-bind="click: $root.onCheckTest" class="btn btn-primary btn-block">Check</a>
               </div>
               <div class="well well-large">
                   <a class="btn btn-block">Put correct variants</a>
