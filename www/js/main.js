@@ -93,14 +93,22 @@
     vm.selectedLessonId(obj.id())
   }
 
-  vm.activeCard = ko.observable(vm.cards()[0])
   vm.currentCards = ko.computed(function()
   {
     return ko.utils.arrayFilter(vm.cards(), function(card)
     {
-      console.log(card.lesson(), vm.selectedLessonId())
       return card.lesson() == vm.selectedLessonId()
     })
   })
+
+  vm.activeCard = ko.observable(vm.cards()[0])
+  vm.activeCardStatus = ko.observable('')
+  vm.answer = ko.observable('')
+  vm.onCheckAnswer = function(obj)
+  {
+    var answer = vm.answer().replace(/\s/, '')
+    vm.activeCardStatus(answer == vm.activeCard().rus() ? 'green' : 'red')
+  }
+
 
   ko.applyBindings(vm)

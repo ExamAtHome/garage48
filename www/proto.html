@@ -13,6 +13,16 @@
         background-color: #aaf;
         border: 1px solid gray;
       }
+
+      .card.red
+      {
+        background-color: #faa;
+      }
+
+      .card.green
+      {
+        background-color: #afa;
+      }
     </style>
   </head>
 
@@ -34,8 +44,10 @@
 
     <div>
       <div data-bind="with: activeCard">
-        <h2 data-bind="text: eng" class="card"></h2>
+        <h2 data-bind="text: eng, css: $root.activeCardStatus()" class="card"></h2>
       </div>
+      <input data-bind="value: answer">
+      <a data-bind="click: onCheckAnswer" class=".btn" href="#">check</a>
     </div>
   </body>
 
