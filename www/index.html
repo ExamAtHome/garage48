@@ -136,7 +136,7 @@
                             </button>
                           </li>
                           <div data-bind="foreach: courses">
-                          <li><a data-bind="text: name" href="english_course1.html"></a></li>
+                          <li><a data-bind="click: $root.onProgressMode, text: name"></a></li>
                           </div>
                           <span data-bind="if: courses().length==0" class="nav-small-text">No courses have been selected</span>
                         </div>
@@ -193,7 +193,7 @@
             <div data-bind="visible: $root.mode() == 'course'" class="span9">
                 <ul class="breadcrumb">
                     <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-                    <li><a href="english.html">English</a> <span class="divider">/</span></li>
+                    <li><a data-bind="click: $root.onEnglishMode">English</a> <span class="divider">/</span></li>
                     <li data-bind="text: $root.selectedCourseName()" class="active"></li>
                 </ul>
                 <p>This course will help you to learn some basic English vocabulary...</p>
@@ -223,8 +223,8 @@
             <div data-bind="visible: $root.mode() == 'lesson'" class="span9">
                 <ul class="breadcrumb">
                     <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-                    <li><a href="english.html">English</a> <span class="divider">/</span></li>
-                    <li><a href="english_course1.html">Course. Home</a> <span class="divider">/</span></li>
+                    <li><a data-bind="click: $root.onEnglishMode">English</a> <span class="divider">/</span></li>
+                    <li><a data-bind="click: $root.onSelectCourse">Course. Home</a> <span class="divider">/</span></li>
                     <li data-bind="text: $root.selectedLessonName()" class="active">Lesson 1: pets</li>
                 </ul>
                 <p><span data-bind="text: $root.selectedLessonDesc()" >This lesson contains several different words of your favourite pets.</span> Here is the list of the words:</p>
@@ -300,14 +300,14 @@
 
       <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
           <div class="progress-img">
-              <img src="img/graph.png" class="img-rounded">
+              <div class="chart" id='chart'></div>
           </div>
       </div>
       <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
           <div class="progress-img">
               <div class="btn-group">
-                  <a class="btn btn-info" href="child_index.html">Back to courses</a>
-                  <a class="btn btn-primary" href="child_test.html">Test</a>
+                  <a data-bind="click: onChildMode" class="btn btn-info">Back to courses</a>
+                  <a data-bind="click: onTestMode" class="btn btn-primary">Test</a>
               </div>
           </div>
       </div>

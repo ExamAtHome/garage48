@@ -27,9 +27,13 @@ drawChart = function(element, data) {
         var options = {
           title: 'Studying progress',
           chartArea: {
-            width: 400,
-            height: 200,
-            }
+            'width': 650,
+            'height':450
+            },
+          vAxis: {
+            'maxValue': 100,
+            'minValue': 0
+          }
         };
         var chartData = google.visualization.arrayToDataTable(arrayData);
         var chart = new google.visualization.LineChart(element[0]);
