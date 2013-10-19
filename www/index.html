@@ -47,19 +47,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="brand" href="index.html">ExamAtHome</a>
+                <a data-bind="click: $root.onIndexMode" class="brand">ExamAtHome</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subjects <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="english.html">English</a></li>
+                                <li><a data-bind="click: $root.onEnglishMode">English</a></li>
                                 <li class="disabled"><a href="#">Mathematics</a></li>
                                 <li class="disabled"><a href="#">Literature</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a data-bind="click: $root.onAboutMode">About</a></li>
+                        <li><a data-bind="click: $root.onContactMode">Contact</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -69,7 +69,7 @@
     <!-- Begin page content -->
     <div class="container">
 
-        <div data-bind="visible: $root.mode() == 'english'" class="row-fluid">
+        <div data-bind="visible: $root.mode() == 'english' || $root.mode() == 'course' || $root.mode() == 'lesson' " class="row-fluid">
             <div class="span3">
 
                 <div class="well sidebar-nav">
@@ -85,8 +85,8 @@
                                 <li data-bind="text: name, click: $root.onSelectLesson"></li>
                             </ul>
                         <li class="nav-header">Author courses</li>
-                        <li class="disabled"><a href="#">FCE cource</a></li>
-                        <li class="disabled"><a href="#">TOEFL cource</a></li>
+                        <li class="disabled"><a href="#">FCE course</a></li>
+                        <li class="disabled"><a href="#">TOEFL course</a></li>
                     </ul>
                 </div><!--/.well -->
 
@@ -101,7 +101,7 @@
                             </button>
                           </li>
                           <div data-bind="foreach: courses">
-                          <li><a data-bind="text: name" href="english_course1.html">Chosen course 1</a></li>
+                          <li><a data-bind="text: name" href="english_course1.html"></a></li>
                           </div>
                           <span data-bind="if: courses().length==0" class="nav-small-text">No courses have been selected</span>
                         </div>
@@ -109,7 +109,7 @@
                 </div><!--/.well -->
 
             </div><!--/span-->
-            <div class="span9">
+            <div data-bind="visible: $root.mode() == 'english'" class="span9">
                 <ul class="breadcrumb">
                     <li><a href="index.html">Home</a> <span class="divider">/</span></li>
                     <li class="active">English</li>
@@ -143,17 +143,70 @@
                 </div>
                 <div class="row-fluid">
                     <div class="span4">
-                        <h3>FCE cource</h3>
+                        <h3>FCE course</h3>
                         <p>This course will allow you to...</p>
                         <p><a href="pets.html" class="btn btn-primary disabled">View</a></p>
                     </div><!--/span-->
                     <div class="span4">
-                        <h3>TOEFL cource</h3>
+                        <h3>TOEFL course</h3>
                         <p>This course will allow you to...</p>
                         <p><a href="#" class="btn btn-primary disabled">View</a></p>
                     </div><!--/span-->
                 </div><!--/row-->
             </div><!--/span-->
+
+            <div data-bind="visible: $root.mode() == 'course'" class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href="english.html">English</a> <span class="divider">/</span></li>
+                    <li data-bind="text: $root.selectedCourseName()" class="active"></li>
+                </ul>
+                <p>This course will help you to learn some basic English vocabulary...</p>
+                <div class="row-fluid">
+                    <div data-bind="foreach: lessons" class="span4">
+                        <h3 data-bind="text: name"></h3>
+                        <p><span data-bind="text: desc"></span> Here are several words that will be included in the lesson:</p>
+                        <p data-bind="foreach: $root.testCards">
+                          <code data-bind="text: eng"></code>
+                        </p>
+                        <p>For complete words list please view the lesson.</p>
+
+                        <div class="btn-group">
+                            <a data-bind="click: $root.onSelectLesson" class="btn btn-primary">View</a>
+                            <a class="btn btn-info">Add this to</a>
+                            <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <div data-bind="foreach: $root.children">
+                                <li><a data-bind="text: name" href="#"></a></li>
+                              </div>
+                            </ul>
+                        </div>
+                    </div><!--/span-->
+                </div><!--/row-->
+            </div><!--/span-->
+
+            <div data-bind="visible: $root.mode() == 'lesson'" class="span9">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href="english.html">English</a> <span class="divider">/</span></li>
+                    <li><a href="english_course1.html">Course. Home</a> <span class="divider">/</span></li>
+                    <li data-bind="text: $root.selectedLessonName()" class="active">Lesson 1: pets</li>
+                </ul>
+                <p><span data-bind="text: $root.selectedLessonDesc()" >This lesson contains several different words of your favourite pets.</span> Here is the list of the words:</p>
+                <p data-bind="foreach: $root.currentCards">
+                    <code data-bind="text: eng">cat</code>
+                </p>
+                <div class="btn-group">
+                    <a class="btn btn-info">Add this to</a>
+                    <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <div data-bind="foreach: $root.children">
+                            <li><a data-bind="text: name" href="#"></a></li>
+                        </div>
+                    </ul>
+                </div>
+            </div><!--/span-->
+
         </div>
 
       <div data-bind="visible: $root.mode() == 'child'" class="row-fluid">
@@ -165,8 +218,8 @@
                           <h3>English</h3>
                           <p>English course description in some words...</p>
                           <div class="btn-group">
-                          <a data-bind="click: $root.onTrainMode" class="btn btn-info" href="child_train.html">Learn</a>
-                          <a class="btn btn-primary" href="child_test.html">Test</a>
+                          <a data-bind="click: $root.onTrainMode" class="btn btn-info">Learn</a>
+                          <a data-bind="click: $root.onTestMode" class="btn btn-primary">Test</a>
                           </div>
                       </div>
                   </div>
@@ -228,6 +281,109 @@
       </div>
 
 
+      <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
+          <div class="progress-img">
+              <img src="img/graph.png" class="img-rounded">
+          </div>
+      </div>
+      <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
+          <div class="progress-img">
+              <div class="btn-group">
+                  <a class="btn btn-info" href="child_index.html">Back to courses</a>
+                  <a class="btn btn-primary" href="child_test.html">Test</a>
+              </div>
+          </div>
+      </div>
+
+      <div data-bind="visible: $root.mode() == 'test'" class="row-fluid">
+          <div class="span12">
+              <h1>Testing English</h1>
+              <p style="margin-bottom: 40px;">Test your knowlege! Input corect translations into the boxes. We will give you the result after all the boxes are completed.</p>
+          </div>
+      </div>
+
+      <div data-bind="visible: $root.mode() == 'test'" class="row-fluid">
+
+          <div class="span5">
+              <div class="well well-large">
+                  <div class="control-group">
+                      <label for="" class="control-label">Label</label>
+                      <div class="controls">
+                          <input type="text" id="" placeholder="Input" class="input-large">
+                          <span class="help-inline">Result</span>
+                      </div>
+                  </div>
+                  <div class="control-group success">
+                      <label for="inputSuccess" class="control-label">Cat</label>
+                      <div class="controls">
+                          <input type="text" id="inputSuccess" placeholder="Кошка" class="input-large">
+                          <span class="help-inline">Correct</span>
+                      </div>
+                  </div>
+                  <div class="control-group error">
+                      <label class="control-label" for="inputError">Horse</label>
+                      <div class="controls">
+                          <input type="text" id="inputError" placeholder="Кошка">
+                          <span class="help-inline">Incorrect</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="span2">
+              <div class="well well-large">
+                  <a class="btn btn-primary btn-block">Check</a>
+              </div>
+              <div class="well well-large">
+                  <a class="btn btn-block">Put correct variants</a>
+              </div>
+          </div>
+
+          <div class="span5">
+              <div class="well well-large" style="position: relative;">
+                  <span class="result">Your result is:</span> <code class="result">56</code> / <code class="result">100</code> <span class="label label-important result-label">You don't pass</span>
+              </div>
+              <div class="well well-large" style="position: relative;">
+                  <span class="result">Your result is:</span> <code class="result">80</code> / <code class="result">100</code> <span class="label label-success result-label">You pass</span>
+              </div>
+              <div class="well well-large" style="position: relative;">
+
+                  <p class="result">Your reward:</p> <p>Valve's Steam Minecraft License Key</p><code class="result">GHFG-3432-GH67-FGFH6</code>
+              </div>
+          </div>
+      </div>
+
+      <div data-bind="visible: $root.mode() == 'index'" class="hero-unit">
+          <h1>Greetings!</h1>
+          <p>This project helps you to...</p>
+          <p><a data-bind="click: $root.onAboutMode" class="btn btn-primary btn-large">Learn more »</a></p>
+      </div>
+
+      <div data-bind="visible: $root.mode() == 'index'" class="btn-toolbar">
+          <div class="btn-group">
+              <a class="btn btn-primary disabled">Add child</a>
+          </div>
+          <div class="btn-group">
+              <button data-bind="click: $root.onEnglishMode" class="btn btn-primary">Manage my children</button>
+              <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
+              <ul data-bind="foreach: children" class="dropdown-menu">
+                  <li><a data-bind="text: name" href="#"></a></li>
+              </ul>
+          </div>
+
+      </div>
+
+      <div data-bind="visible: $root.mode() == 'about'" class="row-fluid">
+          <h1>Some info about us</h1>
+          <p>Some info about the product...</p>
+      </div>
+
+      <div data-bind="visible: $root.mode() == 'contact'" class="row-fluid">
+          <h1>Some contacts</h1>
+          <p>E-mail<br>
+          Phone: (123) 456-7890</p>
+      </div>
+
     </div>
 
     <div id="push"></div>
@@ -239,9 +395,6 @@
     </div>
 </div>
 
-
-<!-- Le javascript
-================================================== -->
 
 </body>
 </html>

@@ -13,16 +13,24 @@ saveData = function()
 init = function(data)
 {
   vm = ko.mapping.fromJS(data, {})
-
+  vm.selectedCourseName = ko.observable('');
   vm.onSelectCourse = function(obj)
   {
+    vm.selectedCourseName(obj.name());
     console.log(ko.mapping.toJS(obj))
+    vm.onCourseMode();
   }
 
   vm.selectedLessonId = ko.observable('');
+  vm.selectedLessonName = ko.observable('');
+  vm.selectedLessonDesc = ko.observable('');
   vm.onSelectLesson = function(obj)
   {
+    console.log(ko.mapping.toJS(obj))
     vm.selectedLessonId(obj.id())
+    vm.selectedLessonName(obj.name())
+    vm.selectedLessonDesc(obj.desc())
+    vm.onLessonMode();
   }
 
   vm.currentCards = ko.computed(function()
@@ -131,7 +139,13 @@ init = function(data)
     saveData()
   }
 
-  vm.mode = ko.observable('english')
+  vm.mode = ko.observable('index')
+
+  vm.onEnglishMode = function()
+  {
+    vm.mode('english')
+  }
+
   vm.onChildMode = function()
   {
     vm.mode('child')
@@ -140,6 +154,41 @@ init = function(data)
   vm.onTrainMode = function()
   {
     vm.mode('train')
+  }
+
+  vm.onProgressMode = function()
+  {
+    vm.mode('progress')
+  }
+
+  vm.onCourseMode = function()
+  {
+    vm.mode('course')
+  }
+
+  vm.onLessonMode = function()
+  {
+    vm.mode('lesson')
+  }
+
+  vm.onTestMode = function()
+  {
+    vm.mode('test')
+  }
+
+  vm.onContactMode = function()
+  {
+    vm.mode('contact')
+  }
+
+  vm.onAboutMode = function()
+  {
+    vm.mode('about')
+  }
+
+  vm.onIndexMode = function()
+  {
+    vm.mode('index')
   }
 
   /* we start here */
