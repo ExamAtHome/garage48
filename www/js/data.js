@@ -1,7 +1,15 @@
 readdata = function(id, onData){
-  jQuery.get('readdata.php',{id:id}, onData);
-}
+  $.ajax({
+    dataType: "json",
+    url: 'readdata.php',
+    data: {id:id},
+    success: onData
+  });
+};
 
-savedata = function(id, data){
-  jQuery.post('savedata.php',{id:id, data:data}, onData);
+writedata = function(id, data){
+  if(typeof data !== 'string'){
+    data = JSON.stringify(data);
+  }
+  jQuery.post('writedata.php',{id:id, data:data});
 }
