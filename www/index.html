@@ -73,7 +73,7 @@
       }
 
       .box-wrapper.selected {
-        background-color: green;
+        background-color: #80dd80;
       }
 
       #animated {
@@ -390,8 +390,10 @@
           <div data-bind="foreach: boxes" style="margin-top: 60px;">
             <div data-bind="css: {selected: box() == vm.activeCard().box()}" class="box-wrapper">
               <img src = "./img/box.png">
+              <div data-bind = "html: name" style="text-align: center; font-weight: bold; font-color: black"></div>
             </div>
           </div>
+          <div style="clear: both; margin-bottom: 20px;"></div>
 
       </div>
 
