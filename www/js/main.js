@@ -131,6 +131,19 @@ init = function(data)
       return o;
   };
 
+  vm.onAddCourseToChild = function()
+  {
+    ko.utils.arrayForEach(vm.children(), function(child) {
+      console.log(child);
+      if(child.name()=='Alice'){
+        ko.utils.arrayForEach(vm.courses(), function(course) {
+          if(course.id()=='course_1')
+            child.courses.push(course)
+        })
+      }
+    });
+  }
+
   vm.variantCards = ko.computed(function()
   {
     var testIds = shuffle(vm.cardsIds())
