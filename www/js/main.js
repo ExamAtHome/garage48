@@ -205,7 +205,6 @@ init = function(data)
     {
       if(card.answer()=='') card.answer(card.rus())
     })
-    saveData()
   }
 
   vm.onSelectAnswer = function(obj)
@@ -267,7 +266,12 @@ init = function(data)
     vm.mode('index')
   }
 
-  vm.boxes = ko.mapping.fromJS([{ box: 5}, { box: 4}, { box: 3}, { box: 2}, { box: 1}])
+  vm.boxes = ko.mapping.fromJS([
+    { box: 5, name: 'UNKNOWN'},
+    { box: 4, name: '&nbsp;'},
+    { box: 3, name: '&nbsp;'},
+    { box: 2, name: '&nbsp;'},
+    { box: 1, name: 'KNOWN'}])
 
   /* we start here */
   ko.applyBindings(vm)
