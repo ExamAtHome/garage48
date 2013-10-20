@@ -4418,8 +4418,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
     display: block;
     float: left;
-    padding: 9.5px 20px 9.5px;
-    margin-left: -20px;
+    padding: 9.5px 20px 9.5px 27px;
     font-size: 20px;
     font-weight: 200;
     color: #666666;
@@ -6667,4 +6666,7 @@ div.subnav-fixed {
 }
 .nav-list-style {
     padding: 3px 15px;
+}
+.logo_small {
+    background: url("/img/logo_small.png") no-repeat scroll left top 12px;
 }
