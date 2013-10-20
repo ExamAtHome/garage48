@@ -121,6 +121,7 @@
                         <li><a data-bind="click: $root.onCourseMode">Course</a></li>
                         <li><a data-bind="click: $root.onLessonMode">Lesson</a></li>
                         <li><a data-bind="click: $root.onTestMode">Test</a></li>
+                        <li data-bind="visible: $root.mode() == 'test'"><a data-bind="click: $root.onFillTest">Fill Test</a></li>
 
                         <!--
                           <li><a data-bind="click: $root.onAboutMode">About</a></li>
@@ -405,17 +406,16 @@
                   <a data-bind="click: $root.onCheckTest" class="btn btn-primary btn-block">Check</a>
               </div>
           </div>
-
           <div class="span5">
-              <div class="well well-large" style="position: relative;">
-                  <span class="result">Your result is:</span> <code class="result">56</code> / <code class="result">100</code> <span class="label label-important result-label">You don't pass</span>
+              <div data-bind="visible: $root.testStatus() == 'checked' && $root.testResult() < 90" class="well well-large" style="position: relative;">
+                  <span class="result">Your result is:</span> <code data-bind="text: $root.testResult" class="result"></code> % <span class="label label-important result-label">You don't pass</span>
               </div>
-              <div class="well well-large" style="position: relative;">
-                  <span class="result">Your result is:</span> <code class="result">80</code> / <code class="result">100</code> <span class="label label-success result-label">You pass</span>
+              <div data-bind="visible: $root.testStatus() == 'checked' && $root.testResult() >= 90" class="well well-large" style="position: relative;">
+                  <span class="result">Your result is:</span> <code data-bind="text: $root.testResult" class="result">80</code> % <span class="label label-success result-label">You pass</span>
               </div>
               <div class="well well-large" style="position: relative;">
 
-                  <p class="result">Your reward:</p> <p>Valve's Steam Minecraft License Key</p><code class="result">GHFG-3432-GH67-FGFH6</code>
+                  <p class="result">Your reward:</p> <p>Valve's Steam Minecraft License Key</p><code data-bind="visible: $root.testResult() >= 90" class="result">GHFG-3432-GH67-FGFH6</code>
               </div>
           </div>
       </div>
