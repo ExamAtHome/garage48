@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9822a8b-25bc-48e4-b37e-8e5ac57e05e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/datachart.json" afterPath="$PROJECT_DIR$/data/datachart.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/datamain.json" afterPath="$PROJECT_DIR$/data/datamain.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +44,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="420" column="48" selection-start="20486" selection-end="20486" vertical-scroll-proportion="-10.307693">
+            <state line="420" column="48" selection-start="20826" selection-end="20826" vertical-scroll-proportion="-10.307693">
               <folding>
                 <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -58,7 +58,7 @@
       <file leaf-file-name="datamain.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/datamain.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="84" selection-start="522" selection-end="522" vertical-scroll-proportion="0.28544775">
+            <state line="385" column="96" selection-start="8094" selection-end="8094" vertical-scroll-proportion="11.354478">
               <folding />
             </state>
           </provider>
@@ -82,9 +82,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/data/datamain.json" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/data/datamain.json" />
       </list>
     </option>
   </component>
@@ -249,7 +249,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -363,7 +363,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="420" column="48" selection-start="20486" selection-end="20486" vertical-scroll-proportion="-10.307693">
+        <state line="420" column="48" selection-start="20826" selection-end="20826" vertical-scroll-proportion="-10.307693">
           <folding>
             <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -375,7 +375,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/datamain.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="84" selection-start="522" selection-end="522" vertical-scroll-proportion="0.28544775">
+        <state line="385" column="96" selection-start="8094" selection-end="8094" vertical-scroll-proportion="11.354478">
           <folding />
         </state>
       </provider>
