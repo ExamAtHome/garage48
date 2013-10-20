@@ -201,7 +201,7 @@
                         <p></p>
                         <div class="btn-group">
                             <button data-bind="click: $root.onSelectCourse, enable: id()=='course_1'" class="btn btn-primary">View</button>
-                            <a class="btn btn-info">Add this to</a>
+                            <button data-bind="enable: id()=='course_1'" class="btn btn-info">Add this to</button>
                             <button data-bind="enable: id()=='course_1'" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
                             <ul class="dropdown-menu">
                               <div data-bind="foreach: $root.children">
