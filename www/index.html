@@ -167,7 +167,7 @@
                         <li class="nav-header"><span style="font-size: 14px; color: #555555;">Child education</span></li>
                         <div data-bind="foreach: children">
                           <li class="divider"></li>
-                          <li class="nav-header"><span data-bind="text: name"></span>
+                          <li class="nav-header"><div><img data-bind="attr: {src: 'img/'+name()+'.jpg'}"></div><span data-bind="text: name"></span>
                             <button data-bind="click: $root.onChildMode, enable: courses().length > 0"
                                     class="btn btn-mini btn-primary pull-right" type="button">Begin
                             </button>

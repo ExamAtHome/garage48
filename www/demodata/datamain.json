@@ -450,12 +450,12 @@
    ],
    "children": [
       {
-         "name": "Alice",
+         "name": "alice",
          "courses": [
          ]
       },
       {
-         "name": "Bob",
+         "name": "bob",
          "courses": [
             {
                "id": "course_3",
