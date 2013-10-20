@@ -40,7 +40,7 @@
         background-size: 75% 75%
       }
 
-      .card p
+      .card.red p, .card.green p
       {
         margin-top: -88px;
       }
@@ -111,8 +111,10 @@
                         <li><a data-bind="click: $root.onLessonMode">Lesson</a></li>
                         <li><a data-bind="click: $root.onTestMode">Test</a></li>
 
-                        <li><a data-bind="click: $root.onAboutMode">About</a></li>
-                        <li><a data-bind="click: $root.onContactMode">Contact</a></li>
+                        <!--
+                          <li><a data-bind="click: $root.onAboutMode">About</a></li>
+                          <li><a data-bind="click: $root.onContactMode">Contact</a></li>
+                        -->
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -304,9 +306,11 @@
         <div class="row-fluid">
           <div class="span6">
             <div data-bind="with: activeCard" class="learning">
-                <div data-bind="css: $root.activeCardStatus(), style: {'background-image': 'url(./picts/' + eng() + '.jpg)'}" class="alert-info card-text card">
+              <div >
+                <div data-bind="css: $root.activeCardStatus()" class="alert-info card-text card">
                   <p data-bind="text: eng">Cat</p>
                 </div>
+              </div>
             </div>
           </div>
           <div class="span6">
