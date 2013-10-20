@@ -75,6 +75,10 @@
       .box-wrapper.selected {
         background-color: green;
       }
+
+      #animated {
+        position: absolute;
+      }
     </style>
 
     <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
@@ -343,6 +347,9 @@
           </div>
         </div>
 
+          <div id="animated" style="display: none">
+            <img src="./img/green.png">
+          </div>
           <div data-bind="foreach: boxes" style="margin-top: 60px;">
             <div data-bind="css: {selected: box() == vm.activeCard().box()}" class="box-wrapper">
               <img src = "./img/box.png">
