@@ -1,9 +1,9 @@
 {
     "courses": [
         {
-            "id": "course_2",
-            "name": "English (5-6)",
-            "desc": "English language education for 5th grade pupils."
+            "id": "course_1",
+            "name": "Russian (5)",
+            "desc": "Russian language education for 5th grade pupils."
         },
         {
             "id": "course_3",
@@ -11,35 +11,35 @@
             "desc": "Mathematics education for 5th grade pupils."
         },
         {
-            "id": "course_1",
-            "name": "Russian (5)",
-            "desc": "Russian language education for 5th grade pupils."
+            "id": "course_2",
+            "name": "English (5-6)",
+            "desc": "English language education for 5th grade pupils."
         }
     ],
    "lessons": [
       {
          "id": "lesson_1",
-         "name": "Lesson1. Pets",
+         "name": "Lesson 1. Pets",
          "desc": "During this lesson you will meet new names of the pets."
       },
       {
          "id": "lesson_2",
-         "name": "Lesson2. Food #2",
+         "name": "Lesson 2. Food",
          "desc": ""
       },
       {
          "id": "lesson_3",
-         "name": "Lesson3. Drink #3",
+         "name": "Lesson 3. Nature",
          "desc": ""
       },
       {
          "id": "lesson_4",
-         "name": "Lesson4. Ware #4",
+         "name": "Lesson 4. Friends",
          "desc": ""
       },
       {
          "id": "lesson_5",
-         "name": "Lesson5. Furniture #5",
+         "name": "Lesson 5. Furniture",
          "desc": ""
       }
    ],

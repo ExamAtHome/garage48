@@ -187,7 +187,7 @@
                 </ul>
                 <div class="hero-unit">
                     <h1>English</h1>
-                    <p>Speaking English is nowadays one of the most important skills. During this course you will study lots of interesting stuff and test yourself on the knowlege of...</p>
+                    <p>Speaking English is nowadays one of the essential important skills. You can improve your knowlege of vocabulary by starting several different courses.</p>
                 </div>
                 <div class="page-header">
                     <h1>Built-in courses <small>These are the series of courses, that are pre-installed in you educational program.</small></h1>
@@ -281,43 +281,78 @@
 
         </div>
 
-      <div data-bind="visible: $root.mode() == 'child'" class="row-fluid">
-          <ul class="thumbnails">
-              <li class="span4">
-                  <div class="thumbnail">
-                      <img data-bind="click: $root.onTrainMode" alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img1.png">
-                      <div class="caption">
-                          <h3>English</h3>
-                          <p>English course description in some words...</p>
-                          <div class="btn-group">
-                          <a data-bind="click: $root.onTrainMode" class="btn btn-info">Learn</a>
-                          <a data-bind="click: $root.onTestMode" class="btn btn-primary">Test</a>
-                          </div>
-                      </div>
-                  </div>
-              </li>
-              <li class="span4">
-                  <div class="thumbnail">
-                      <img alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img2.png">
-                      <div class="caption">
-                          <h3>Mathematics</h3>
-                          <p>This course is yet disabled due to some reasons.</p>
-                          <p><a class="btn btn-primary disabled" href="#">Start</a></p>
-                      </div>
-                  </div>
-              </li>
-              <li class="span4">
-                  <div class="thumbnail">
-                      <img alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img3.png">
-                      <div class="caption">
-                          <h3>Russian</h3>
-                          <p>This course is yet disabled due to some reasons.</p>
-                          <p><a class="btn btn-primary disabled" href="#">Start</a></p>
-                      </div>
-                  </div>
-              </li>
-          </ul>
-      </div>
+        <div data-bind="visible: $root.mode() == 'child'" class="row-fluid">
+            <ul class="thumbnails">
+                <li class="span4">
+                    <div class="thumbnail">
+                        <img data-bind="click: $root.onTrainMode" alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img1.png">
+                        <div class="caption">
+                            <h3>English</h3>
+                            <p>English course description in some words...</p>
+                            <div class="btn-group">
+                                <a data-bind="click: $root.onTrainMode" class="btn btn-info">Learn</a>
+                                <a data-bind="click: $root.onTestMode" class="btn btn-primary">Test</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="span4">
+                    <div class="thumbnail">
+                        <img alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img2.png">
+                        <div class="caption">
+                            <h3>Mathematics</h3>
+                            <p>This course is yet disabled due to some reasons.</p>
+                            <p><a class="btn btn-primary disabled" href="#">Start</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="span4">
+                    <div class="thumbnail">
+                        <img alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img3.png">
+                        <div class="caption">
+                            <h3>Russian</h3>
+                            <p>This course is yet disabled due to some reasons.</p>
+                            <p><a class="btn btn-primary disabled" href="#">Start</a></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div data-bind="visible: $root.mode() == 'child'" class="row-fluid">
+            <ul class="thumbnails">
+                <li class="span4">
+                    <div class="thumbnail">
+                        <img data-bind="click: $root.onTrainMode" alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img4.png">
+                        <div class="caption">
+                            <h3>Biology</h3>
+                            <p>This course is yet disabled due to some reasons.</p>
+                            <p><a class="btn btn-primary disabled" href="#">Start</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="span4">
+                    <div class="thumbnail">
+                        <img alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img5.png">
+                        <div class="caption">
+                            <h3>Literature</h3>
+                            <p>This course is yet disabled due to some reasons.</p>
+                            <p><a class="btn btn-primary disabled" href="#">Start</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="span4">
+                    <div class="thumbnail">
+                        <img alt="300x200" data-src="holder.js/300x200" style="width: 300px; height: 200px;" src="img/img6.png">
+                        <div class="caption">
+                            <h3>Culture</h3>
+                            <p>This course is yet disabled due to some reasons.</p>
+                            <p><a class="btn btn-primary disabled" href="#">Start</a></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
       <div data-bind="visible: $root.mode() == 'train'" class="row-fluid">
         <div class="row-fluid">
@@ -449,10 +484,11 @@
       </div>
 
       <div data-bind="visible: $root.mode() == 'about'" class="row-fluid">
-          <h1>About us</h1>
+         <h1>About us</h1>
          <p>Наш продукт помогает родителям мотивировать своих детей в обучении. <br>Это достигается за счет возможности создания курсов на базе материалов, созданных учителями, и возможностью создать вознаграждение за прохождение курса.
          </p>
-          <p>Команда: Владимир Рыбаков, Илья Никаноров, Сергей Шашев, Андрей Богданов</p>
+         <p>Команда: Владимир Рыбаков, Илья Никаноров, Сергей Шашев, Андрей Богданов</p>
+         <p>Связь (skype): nittis.nittis, torr_ft, shashev.sergey, andrey.i.bogdanov</p>
       </div>
 
       <div data-bind="visible: $root.mode() == 'contact'" class="row-fluid">

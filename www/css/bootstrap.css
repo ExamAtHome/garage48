@@ -6122,7 +6122,7 @@ a.badge:focus {
 }
 
 .hero-unit {
-    padding: 40px;
+    padding: 20px 40px;
     margin-bottom: 30px;
     font-size: 18pxpx;
     font-weight: 200;
@@ -6658,7 +6658,8 @@ div.subnav-fixed {
     white-space: nowrap;
 }
 .lesson {
-    height: 320px;
+
+    margin-bottom: 20px;
 }
 .nav-header-style {
     color: #999999 !important;
