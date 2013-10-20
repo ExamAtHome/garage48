@@ -57,7 +57,7 @@ init = function(data)
     setTimeout(function()
     {
       vm.activeCardStatus(correct ? 'green' : 'red')
-      element.html(vm.activeCard().rus())
+      element.html('<p>' + vm.activeCard().rus() + '</p>')
       element.removeClass('flip')
       vm.activeCard().box(newBox)
       saveData()
