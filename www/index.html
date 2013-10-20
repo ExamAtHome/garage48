@@ -432,14 +432,14 @@
       </div>
     </div>
 -->
-          <div class="span5 testing">
+          <div class="span6 testing">
               <div data-bind="css: $root.testStatus">
                   <div data-bind="foreach: testCards" class="well well-large">
                       <div class="control-group">
                           <label data-bind="text:eng" for="" class="control-label"></label>
                           <div class="controls">
                               <input data-bind="value: answer, css: status"
-                                     type="text" id="" placeholder="Input" class="input-large">
+                                     type="text" id="" placeholder="Input" class="input-large span12">
                               <!-- <span class="help-inline">Result</span> -->
                           </div>
                       </div>
@@ -447,12 +447,7 @@
               </div>
           </div>
 
-          <div class="span2">
-              <div class="well well-large">
-                  <a data-bind="click: $root.onCheckTest" class="btn btn-primary btn-block">Check</a>
-              </div>
-          </div>
-          <div class="span5">
+          <div class="span6">
               <div data-bind="visible: $root.testStatus() == 'checked' && $root.testResult() < 90" class="well well-large" style="position: relative;">
                   <span class="result">Your result is:</span> <code data-bind="text: $root.testResult" class="result"></code> % <span class="label label-important result-label">You don't pass</span>
               </div>
@@ -467,6 +462,9 @@
                       <img data-bind="visible: $root.testResult() >= 90" src="img/award.jpg" style="padding-bottom:10px;"></img>
                       <code data-bind="visible: $root.testResult() >= 90" class="result">GHFG-3432-GH67-FGFH6</code>
                     </div>
+              </div>
+              <div>
+                  <a data-bind="click: $root.onCheckTest" class="btn btn-primary btn-large">Check</a>
               </div>
           </div>
       </div>

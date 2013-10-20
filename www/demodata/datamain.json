@@ -450,17 +450,17 @@
    ],
    "children": [
       {
+         "name": "Alice",
+         "courses": [
+         ]
+      },
+      {
          "name": "Bob",
          "courses": [
             {
                "id": "course_1",
                "name": "English (3)"
             }
-         ]
-      },
-      {
-         "name": "Alice",
-         "courses": [
          ]
       }
    ]
