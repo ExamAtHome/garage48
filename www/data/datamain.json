@@ -3,17 +3,17 @@
       {
          "id": "course_2",
          "name": "Course. Friends",
-         "desc": ""
+         "desc": "This course contains all words, corresponding with friends and acquaintances."
       },
       {
          "id": "course_3",
          "name": "Course. Travel",
-         "desc": ""
+         "desc": "Travelling is fun! Ask our colleagues from Garage48. Let's learn some words!"
       },
       {
          "id": "course_1",
          "name": "Course. Home",
-         "desc": "This course allows you to know about thing you meet in home"
+         "desc": "Home sweet home. All the words, that are related to home are here."
       }
    ],
    "lessons": [
