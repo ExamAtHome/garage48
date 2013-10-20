@@ -135,7 +135,7 @@ init = function(data)
   {
     ko.utils.arrayForEach(vm.children(), function(child) {
       console.log(child);
-      if(child.name()=='Alice'){
+      if(child.name()=='alice'){
         ko.utils.arrayForEach(vm.courses(), function(course) {
           if(course.id()=='course_1')
             child.courses.push(course)
