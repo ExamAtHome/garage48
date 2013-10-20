@@ -199,7 +199,7 @@
                             <button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
                             <ul class="dropdown-menu">
                               <div data-bind="foreach: $root.children">
-                                <li><a class="child-dropdown" data-bind="text: name" href="#"></a></li>
+                                <li><a data-bind="click: $root.onAddCourseToChild, text: name" class="child-dropdown"></a></li>
                               </div>
                             </ul>
                         </div>
