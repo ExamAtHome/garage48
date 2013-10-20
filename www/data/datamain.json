@@ -2,18 +2,18 @@
    "courses": [
        {
            "id": "course_1",
-           "name": "Russian (5)",
-           "desc": "Russian language education for 5th grade pupils."
+           "name": "English (3)",
+           "desc": "English language education for 3th grade pupils."
        },
        {
          "id": "course_3",
-         "name": "Mathematics (5)",
-         "desc": "Mathematics education for 5th grade pupils."
+         "name": "English (4)",
+         "desc": "English education for 4th grade pupils."
        },
        {
            "id": "course_2",
            "name": "English (5-6)",
-           "desc": "English language education for 5th grade pupils."
+           "desc": "English language education for 5-6th grade pupils."
        }
    ],
     "lessons": [
