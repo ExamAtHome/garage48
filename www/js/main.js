@@ -47,13 +47,35 @@ init = function(data)
 
   vm.onCheckAnswer = function(obj)
   {
+
     var answer = vm.answer().replace(/\s/, '')
     var correct = (answer == vm.activeCard().rus())
+    var oldBox = vm.activeCard().box()
     var newBox = correct ? Math.max(vm.activeCard().box() - 1, 1) : 5
     adjustProgress(vm.cardsWeight() + newBox - vm.activeCard().box(), vm.cards().length)
 
+    var boxes = $('.box-wrapper')
+    var from = $(boxes[5 - oldBox]).position().left + 50
+    var to = $(boxes[5 - newBox]).position().left + 50
+    console.log(from, to)
+
+    var animated = $('#animated')
+    var image = newBox > oldBox ? 'red' : 'green'
+    $('img', animated).attr('src', './img/' + image + '.png');
+    animated.css('left', from)
+      .show()
+      .animate({left: to},
+      {
+        duration: 500 * Math.abs(oldBox - newBox),
+        done: function()
+        {
+          animated.hide()
+        }
+      })
+
     var element = $('.learning .card')
     element.addClass('flipper').addClass('flip')
+
     setTimeout(function()
     {
       vm.activeCardStatus(correct ? 'green' : 'red')
@@ -61,6 +83,7 @@ init = function(data)
       element.removeClass('flip')
       element.css('background-image', 'url(./picts/' + vm.activeCard().eng() + '.jpg)')
       vm.activeCard().box(newBox)
+      $('.selected').removeClass('.selected')
       saveData()
     }, 500)
   }

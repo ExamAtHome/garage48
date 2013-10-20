@@ -75,6 +75,10 @@
       .box-wrapper.selected {
         background-color: green;
       }
+
+      #animated {
+        position: absolute;
+      }
     </style>
 
     <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
@@ -191,6 +195,7 @@
                 <div data-bind="foreach: courses" class="row-fluid">
                     <div class="span4">
                         <h3 data-bind="text: name"></h3>
+                        <img style="margin-bottom: 10px;" data-bind="attr: {src: './img/' + id() + '.jpg'}">
                         <p data-bind="text: desc"></p>
                         <p></p>
                         <div class="btn-group">
@@ -343,6 +348,9 @@
           </div>
         </div>
 
+          <div id="animated" style="display: none">
+            <img src="./img/green.png">
+          </div>
           <div data-bind="foreach: boxes" style="margin-top: 60px;">
             <div data-bind="css: {selected: box() == vm.activeCard().box()}" class="box-wrapper">
               <img src = "./img/box.png">
