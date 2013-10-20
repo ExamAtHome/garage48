@@ -22,17 +22,25 @@ drawChart = function(element, data) {
     draw = function(data){
       var arrayData = [['Attempt', 'Percent']];
       for(var i=0;i<data.length;i++){
-          arrayData.push([i, Math.round(data[i])]);
+          arrayData.push([i, Math.round(data[i]*10)/10]);
       }
         var options = {
           title: 'Studying progress',
-          chartArea: {
-            'width': 650,
-            'height':450
-            },
+          width: 850,
+          height:500,
+          lineWidth: 4,
+          legend: 'none',
+          chartArea:{
+            width: 700,
+            height:400,
+          },
+          hAxis :{
+            'title': 'time'
+          },
           vAxis: {
             'maxValue': 100,
-            'minValue': 0
+            'minValue': 0,
+            'title': 'percent'
           }
         };
         var chartData = google.visualization.arrayToDataTable(arrayData);
