@@ -118,10 +118,15 @@ init = function(data)
   });
 
   vm.testStatus = ko.observable('')
+  vm.testResult = ko.observable(0)
 
+  vm.touchTest = ko.observable('')
   vm.testCards = ko.computed(function()
   {
+    vm.touchTest()
+
     vm.testStatus('')
+    vm.testResult(0)
 
     var testIds = shuffle(vm.cardsIds());
     var test = ko.utils.arrayFilter(vm.cards(), function(card) {
@@ -140,14 +145,29 @@ init = function(data)
   {
     vm.testStatus('checked')
 
+    var counter=0
+    var success=0
     ko.utils.arrayForEach(vm.testCards(), function(card)
     {
       var correct = (card.answer() == card.rus())
         , newBox = correct ? Math.max(card.box() - 1, 1) : 5
+      counter++
+      success+=(correct ? 1 : 0)
       card.status(correct ? 'green' : 'red')
       card.box(newBox)
     });
     saveData()
+    if(counter > 0)
+      vm.testResult(Math.round(100*success/counter))
+  }
+
+  vm.onFillTest = function()
+  {
+    ko.utils.arrayForEach(vm.testCards(), function(card)
+    {
+      if(card.answer()=='') card.answer(card.rus())
+    })
+    vm.onCheckTest();
   }
 
   vm.onSelectAnswer = function(obj)
@@ -191,6 +211,7 @@ init = function(data)
   vm.onTestMode = function()
   {
     vm.mode('test')
+    vm.touchTest(new Date())
   }
 
   vm.onContactMode = function()
