@@ -98,7 +98,7 @@
          "lesson": "lesson_1"
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_8",
          "eng": "snake",
          "rus": "змея",
@@ -142,7 +142,7 @@
          "status": ""
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_14",
          "eng": "orange",
          "rus": "апельсин",
@@ -297,7 +297,7 @@
          "status": ""
       },
       {
-         "box": 5,
+         "box": 4,
          "id": "card_36",
          "eng": "pot",
          "rus": "кастрюля",

@@ -231,6 +231,8 @@ init = function(data)
     vm.mode('index')
   }
 
+  vm.boxes = ko.mapping.fromJS([{ box: 5}, { box: 4}, { box: 3}, { box: 2}, { box: 1}])
+
   /* we start here */
   ko.applyBindings(vm)
   vm.onEnglishMode()
