@@ -458,8 +458,8 @@
          "name": "Bob",
          "courses": [
             {
-               "id": "course_1",
-               "name": "English (3)"
+               "id": "course_3",
+               "name": "English (4)"
             }
          ]
       }
