@@ -1,19 +1,19 @@
-{
+﻿{
    "courses": [
       {
          "id": "course_2",
-         "name": "Course. Friends",
-         "desc": ""
+         "name": "English (5-6)",
+         "desc": "English language education for 5th grade pupils."
       },
       {
          "id": "course_3",
-         "name": "Course. Travel",
-         "desc": ""
+         "name": "Mathematics (5)",
+         "desc": "Mathematics education for 5th grade pupils."
       },
       {
          "id": "course_1",
-         "name": "Course. Home",
-         "desc": "This course allows you to know about thing you meet in home"
+         "name": "Russian (5)",
+         "desc": "Russian language education for 5th grade pupils."
       }
    ],
    "lessons": [

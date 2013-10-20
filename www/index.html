@@ -195,6 +195,7 @@
                 <div data-bind="foreach: courses" class="row-fluid">
                     <div class="span4">
                         <h3 data-bind="text: name"></h3>
+                        <img style="margin-bottom: 10px;" data-bind="attr: {src: './img/' + id() + '.jpg'}">
                         <p data-bind="text: desc"></p>
                         <p></p>
                         <div class="btn-group">
