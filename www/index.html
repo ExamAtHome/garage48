@@ -110,6 +110,7 @@
                         <li><a data-bind="click: $root.onCourseMode">Course</a></li>
                         <li><a data-bind="click: $root.onLessonMode">Lesson</a></li>
                         <li><a data-bind="click: $root.onTestMode">Test</a></li>
+                        <li data-bind="visible: $root.mode() == 'test'"><a data-bind="click: $root.onFillTest">Fill Test</a></li>
 
                         <!--
                           <li><a data-bind="click: $root.onAboutMode">About</a></li>
@@ -379,7 +380,6 @@
                       </div>
                   </div>
               </div>
-              <a data-bind="click: $root.onFillTest" class="btn btn-primary btn-block">Fill</a>
           </div>
 
           <div class="span2">

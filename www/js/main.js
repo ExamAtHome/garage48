@@ -124,7 +124,7 @@ init = function(data)
   vm.touchTest = ko.observable('')
   vm.testCards = ko.computed(function()
   {
-    vm.touchTest()
+    //var test = vm.touchTest()
 
     vm.testStatus('')
     vm.testResult(0)
@@ -148,7 +148,8 @@ init = function(data)
 
     var counter=0
     var success=0
-    ko.utils.arrayForEach(vm.testCards(), function(card)
+    var cards = vm.testCards()
+    ko.utils.arrayForEach(cards, function(card)
     {
       var correct = (card.answer() == card.rus())
         , newBox = correct ? Math.max(card.box() - 1, 1) : 5
@@ -168,7 +169,7 @@ init = function(data)
     {
       if(card.answer()=='') card.answer(card.rus())
     })
-    vm.onCheckTest();
+    saveData()
   }
 
   vm.onSelectAnswer = function(obj)
@@ -211,8 +212,8 @@ init = function(data)
 
   vm.onTestMode = function()
   {
-    vm.mode('test')
     vm.touchTest(new Date())
+    vm.mode('test')
   }
 
   vm.onContactMode = function()
