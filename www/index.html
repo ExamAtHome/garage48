@@ -460,9 +460,11 @@
               <div class="well well-large" style="position: relative;">
 
                     <p class="result">Your reward:</p> <p>Valve's Steam Minecraft License Key</p>
-                    <img data-bind="visible: $root.testResult() < 90" src="img/award.jpg" style="opacity:0.3"></img>
-                    <img data-bind="visible: $root.testResult() >= 90" src="img/award.jpg" style="padding-bottom:10px;"></img>
-                    <code data-bind="visible: $root.testResult() >= 90" class="result">GHFG-3432-GH67-FGFH6</code>
+                    <div style="text-align: center;">
+                      <img data-bind="visible: $root.testResult() < 90" src="img/award.jpg" style="opacity:0.3"></img>
+                      <img data-bind="visible: $root.testResult() >= 90" src="img/award.jpg" style="padding-bottom:10px;"></img>
+                      <code data-bind="visible: $root.testResult() >= 90" class="result">GHFG-3432-GH67-FGFH6</code>
+                    </div>
               </div>
           </div>
       </div>
