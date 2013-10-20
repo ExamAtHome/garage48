@@ -64,6 +64,17 @@
         -webkit-transform:rotateY(90deg);
         transform:rotateY(90deg);
       }
+
+      .box-wrapper{
+        float: left;
+        margin-left: 40px;
+        padding: 8px;
+        border-radius: 16px;
+      }
+
+      .box-wrapper.selected {
+        background-color: green;
+      }
     </style>
 
     <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
@@ -306,13 +317,14 @@
         <div class="row-fluid">
           <div class="span6">
             <div data-bind="with: activeCard" class="learning">
-              <div >
+              <div>
                 <div data-bind="css: $root.activeCardStatus()" class="alert-info card-text card">
                   <p data-bind="text: eng">Cat</p>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="span6">
             <div class="input-form">
               <div class="input-append" style="display: none">
@@ -329,6 +341,13 @@
             </div>
           </div>
         </div>
+
+          <div data-bind="foreach: boxes" style="margin-top: 60px;">
+            <div data-bind="css: {selected: box() == vm.activeCard().box()}" class="box-wrapper">
+              <img src = "./img/box.png">
+            </div>
+          </div>
+
       </div>
 
       <div data-bind="visible: $root.mode() == 'progress'" class="row-fluid">
